@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormField } from "@/components/ui/form";
 import FormInputField from "@/components/FormInputField";
+import FaultyTerminal from "@/components/FaultyTerminal/FaultyTerminal";
 
 export const Route = createFileRoute("/_auth/cadastro/")({
   component: RouteComponent,
@@ -213,7 +214,28 @@ function RouteComponent() {
         >
           Olá, <span className="text-5xl">tudo bem?</span>
         </motion.h3>
-        <div className="w-full h-full top-0 right-0 bg-[url(/landing-page-pattern.svg)] bg-cover absolute"></div>
+
+        <div className="w-full h-full top-0 left-0 absolute">
+          <FaultyTerminal
+            scale={1.9}
+            gridMul={[2, 1]}
+            digitSize={1.4}
+            timeScale={1}
+            pause={false}
+            scanlineIntensity={1}
+            glitchAmount={1}
+            flickerAmount={1}
+            noiseAmp={1}
+            chromaticAberration={0}
+            dither={0}
+            curvature={0.1}
+            tint="#404040"
+            mouseReact={true}
+            mouseStrength={0.5}
+            pageLoadAnimation={false}
+            brightness={0.6}
+          />
+        </div>
       </motion.div>
     </main>
   );

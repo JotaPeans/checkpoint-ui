@@ -6,6 +6,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import FaultyTerminal from "@/components/FaultyTerminal/FaultyTerminal";
 import FormInputField from "@/components/FormInputField";
 import { Form, FormField } from "@/components/ui/form";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -84,7 +85,27 @@ function RouteComponent() {
         >
           Bem-Vindo <span className="text-5xl">de volta!</span>
         </motion.h3>
-        <div className="w-full h-full top-0 left-0 bg-[url(/landing-page-pattern.svg)] bg-cover absolute pointer-events-none"></div>
+        <div className="w-full h-full top-0 left-0 absolute">
+          <FaultyTerminal
+            scale={1.9}
+            gridMul={[2, 1]}
+            digitSize={1.4}
+            timeScale={1}
+            pause={false}
+            scanlineIntensity={1}
+            glitchAmount={1}
+            flickerAmount={1}
+            noiseAmp={1}
+            chromaticAberration={0}
+            dither={0}
+            curvature={0.1}
+            tint="#404040"
+            mouseReact={true}
+            mouseStrength={0.5}
+            pageLoadAnimation={false}
+            brightness={0.6}
+          />
+        </div>
       </motion.div>
 
       <motion.div
@@ -146,11 +167,7 @@ function RouteComponent() {
               />
             </div>
 
-            <Button
-              size="lg"
-              isLoading={isLoading}
-              className="mt-4"
-            >
+            <Button size="lg" isLoading={isLoading} className="mt-4">
               Entrar
             </Button>
 

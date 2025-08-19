@@ -4,7 +4,7 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 export const Route = createRootRoute({
   component: () => (
     <>
-      <Toaster richColors />
+      <Toaster richColors theme="dark" />
       <Outlet />
     </>
   ),
